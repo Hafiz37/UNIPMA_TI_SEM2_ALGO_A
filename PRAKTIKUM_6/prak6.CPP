@@ -2,10 +2,19 @@
 
 using namespace std;
 
+int pBar = 13;
 void input(int &alas, int &tinggi) {
+
+    for (int i = 0; i < pBar; i++) cout << "<>"; 
     cout << "\nMenghitung Luas Segitiga\n";
+    for (int i = 0; i < pBar; i++) cout << "<>"; 
+    cout<<endl;
+    
     cout << "Alas: "; cin >> alas;
     cout << "Tinggi: "; cin >> tinggi;
+
+    for (int i = 0; i < pBar; i++) cout << "--"; 
+    cout<<endl;
 }
 
 float Luas(int alas, int tinggi) {
@@ -14,6 +23,9 @@ float Luas(int alas, int tinggi) {
 
 void output(float luas) {
     cout << "Luas: " << luas << endl;
+
+    for (int i = 0; i < pBar; i++) cout << "--"; 
+    cout<<endl;
 }
 
 int main() {

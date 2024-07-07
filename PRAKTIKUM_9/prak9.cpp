@@ -2,15 +2,33 @@
 #include <cmath> // Untuk fungsi sqrt dan fmod
 using namespace std;
 
-int main()
-{
-    int x, y, jumlah, kurang, kali;
-    float pembagian, akar;
+// membuat function untuk membuat garis penghias
+string garis(string model, int panjang, int jmlhEndl){
+    string result;
 
-    cout << "masukan bilangan pertama: "<<endl; cin >> x;
-    cout << "masukan bilangan kedua: "<<endl; cin >> y;
-    cout << endl;
-    
+    for(int i = 0 ; i < panjang ; i++) result += model;
+    for(int i = 0 ; i < jmlhEndl ; i++) result += "\n";
+
+    return result;
+}
+
+int main(){
+    int x, y, jumlah, kurang, kali, modulus;
+    double pembagian, akar;
+
+    cout << garis("<>", 16, 1);
+    cout << "Melakukan matematik dari 2 angka \n";
+    cout << garis("<>", 16, 2);
+
+    cout << garis("~", 30, 1);
+    cout << "masukkan bilangan pertama : ";
+    cin >> x;
+    cout << "masukkan bilangan kedua   : ";
+    cin >> y;
+    cout << garis("~", 30, 2);
+
+
+    cout << garis("-", 15, 1);
     jumlah = x + y;
     cout << "jumlah: " << jumlah << endl;
 
@@ -20,13 +38,23 @@ int main()
     kali = x * y;
     cout << "kali: " << kali << endl;
 
-    pembagian = (float)x / y;
-    cout << "pembagian: " << pembagian << endl;
+    // agar tidak ada nilai nol
+    if (y != 0) {
+        pembagian = static_cast<double>(x) / y;
+        cout << "pembagian: " << pembagian << endl;
+    } else {
+        cout << "pembagian: tidak dapat dibagi dengan nol" << endl;
+    }
 
-    akar = x * sqrt(y);
+    akar = x * sqrt(static_cast<double>(y));
     cout << "akar: " << akar << endl;
 
-return 0;
+    modulus = x % y;
+    cout << "modulus: " << modulus << endl;
+
+    cout << garis("-", 15, 1);
+
+    return 0;
 }
 
 
