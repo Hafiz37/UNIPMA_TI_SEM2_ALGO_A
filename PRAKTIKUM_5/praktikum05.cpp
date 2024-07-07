@@ -14,10 +14,15 @@ struct TMhs {
 };
 
 int main() {
+    int pBar = 17;
     TMhs mhs1, mhs2;
-    cout << "----------------------------------" <<endl;
+    
+    for (int i = 0; i < pBar; i++) cout << "<>"; 
+    cout<<endl;
     cout << "\t  PENGISIAN DATA" << endl;
-    cout << "----------------------------------" <<endl << endl;
+    for (int i = 0; i < pBar; i++) cout << "<>"; 
+    cout<<endl;
+
     cout << "NIM\t\t:\t";
     cin >> mhs1.NIM;
     cout << "NAMA\t\t:\t";
@@ -46,16 +51,24 @@ int main() {
 
     mhs2 = mhs1;
  
-    cout << "Data yang Dimasukkan :" << endl << endl;
+    for (int i = 0; i < pBar; i++) cout << "~~"; 
+    cout<<endl;
+    cout << "Data yang Dimasukkan :" << endl;
+    for (int i = 0; i < pBar; i++) cout << "~~"; 
+    cout<<endl;
+
     cout << "NIM\t\t:\t" << mhs2.NIM << endl;
     cout << "NAMA\t\t:\t" << mhs2.Nama << endl;
     cout << "Nilai Quiz\t:\t" << mhs2.NilaiQuiz << endl;
     cout << "Nilai UTS\t:\t" << mhs2.NilaiUTS << endl;
     cout << "Nilai UAS\t:\t" << mhs2.NilaiUAS << endl;
-    cout << "----------------------------------" << endl;
+    
+    for (int i = 0; i < pBar; i++) cout << "--"; 
+    cout<<endl;
     cout << "Nilai Akhir\t:\t" << mhs2.NilaiAkhir << endl;
     cout << "Index\t\t:\t" << mhs2.index << endl;
-    cout << "----------------------------------" << endl << endl;
+    for (int i = 0; i < pBar; i++) cout << "--"; 
+    cout<<endl<<endl;
 
     return 0;
 }
